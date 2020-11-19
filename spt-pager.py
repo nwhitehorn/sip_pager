@@ -95,7 +95,7 @@ try:
         sys.exit(0)
     else:
         print("Alert not acknowledged")
-        sys.exit(0)
+        sys.exit(1)
 
 except pj.Error as e:
     print("Exception: " + str(e))
