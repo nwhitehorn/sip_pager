@@ -64,7 +64,7 @@ try:
     lib.init(log_cfg = pj.LogConfig(level=3, callback=log_cb))
 
     # Create UDP transport which listens to any available port
-    transport = lib.create_transport(pj.TransportType.TCP)
+    transport = lib.create_transport(pj.TransportType.UDP)
     
     # Start the library
     lib.start()
@@ -81,7 +81,7 @@ try:
     while call.is_valid():
         time.sleep(1)
         if time.time() - start_time > 20:
-            # Give up if this has run more than 20 seconds with ack.
+            # Give up if this has run more than 20 seconds without ack.
             # Probably got voicemail.
             break
 
